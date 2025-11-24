@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLGEMEIN</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .placeholder {
+            height: 80px;
+        }
+
+        textarea {
+            overflow: hidden;
+            border-radius: 0 0 10px 10px;
+            resize: none;
+            font-size: 1.3em;
+            width: calc(99% - 15px);
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 15px;
+        }
+
+        .content a {
+            font-weight: bold;
+            font-size: 1.4em;
+            border: solid black 1px;
+            border-radius: 10px 10px 0px 0px;
+            width: calc(100% - 20px);
+            background-color: white;
+            padding: 10px;
+        }
+
+        .first {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .first div {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .content img {
+            border: solid black 1px;
+            border-radius: 10px;
+            height: auto;
+            flex: 0.4;
+        }
+
+        .second {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .second div {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .second img {
+            border: solid black 1px;
+            border-radius: 10px;
+            height: auto;
+            max-width: 25%;
+        }
+
+        @media screen and (max-width: 650px) {
+
+            .first,
+            .second {
+                flex-direction: column;
+            }
+
+            .second img {
+                max-width: 50%;
+                align-self: center;
+            }
+
+            .first img {
+                max-width: 50%;
+                width: 50%;
+                align-self: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navBar"></div>
+    <script src="JS/navbar.js"></script>
+    <div class="content">
+        <div class="placeholder"></div>
+        <div class="first">
+            <img src="IMG/Passfoto_JulianLombardo.jpg" alt="Foto_Julian" width="100">
+            <div>
+                <a>Persönliche Daten</a>
+                <textarea name="Persönlich" id="persönlich" readonly>Name: Julian Alessio Lombardo
+
+Adresse: Dinggrabenstrasse 1, 4304 Giebenach
+
+Mobil: 076 749 67 88
+
+E-Mail: julianxalessio@gmail.com
+
+Geburtsdatum: 03.06.2009, Basel
+
+Nationalitäten: Schweiz & Italien</textarea>
+            </div>
+        </div>
+        <div class="second">
+            <div>
+                <a>Schulbildung</a><br>
+                <textarea name="Schulbildung" id="Schulbildung" readonly>2022-2025 1 .- 3. Sekundarschule Niveau P, Pratteln
+
+2016-2022 1 .- 6. Primarschule, Giebenach</textarea><br>
+                <a style="margin-top: 10px;">Sprachkentnisse</a><br>
+                <textarea name="Sprachkentnisse" id="Sprachkentnisse" readonly>Deutsch | Muttersprache
+
+Französisch | Gute mündliche und schriftliche Kenntnisse
+(7. Jahre)
+
+Italienisch | Gute mündliche Kenntnisse
+(2. Jahre)
+
+Englisch | Sehr gute mündliche und schriftliche Kenntnisse
+(5. Jahre)</textarea>
+            </div>
+            <img src="IMG/Julian_Baby.jpg" alt="Foto_Julian_Baby">
+        </div>
+        <div style="width: 100%; display: flex; flex-direction: column;">
+            <a>IT-Kentnisse</a><br>
+            <textarea name="IT" id="IT" readonly>Sehr gute Kenntnisse Office 365 (Word, Excel, Power Point, OneNote, Teams, etc.).
+
+Sehr gute Kentnisse in HTML, CSS, JS, Python, Java.
+
+Gute Kenntnisse in C# und C++.
+
+Weis wie man Workstations einrichtet, Server wartet, Dokumentationen schreibt, mit Java Clients und Server
+erstellen kann, Netzwerke aufbaut, etc.</textarea>
+        </div>
+    </div>
+    <div class="footer"></div>
+
+
+    <script src="JS/footer.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("textarea[readonly]").forEach(textarea => {
+                textarea.style.height = "auto";
+                textarea.style.height = textarea.scrollHeight + "px";
+            });
+        });
+    </script>
+</body>
+
+</html>

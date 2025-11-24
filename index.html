@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/slideshow.css">
+</head>
+
+<body>
+    <div class="navBar"></div>
+    <script src="JS/navbar.js"></script>
+    <div class="placeholder"></div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <picture>
+                <source srcset="IMG/" media="(max-width:650px)">
+                <source srcset="IMG/" media="(min-width:651px)">
+                <img src="IMG/" alt="">
+            </picture>
+        </div>
+        <div class="mySlides fade">
+            <picture>
+                <source srcset="IMG/" media="(max-width:650px)">
+                <source srcset="IMG/" media="(min-width:651px)">
+                <img src="IMG/" alt="">
+            </picture>
+        </div>
+        <div class="mySlides fade">
+            <picture>
+                <source srcset="IMG/" media="(max-width:650px)">
+                <source srcset="IMG/" media="(min-width:651px)">
+                <img src="IMG/" alt="">
+            </picture>
+        </div>
+        <div class="mySlides fade">
+            <picture>
+                <source srcset="IMG/" media="(max-width:650px)">
+                <source srcset="IMG/" media="(min-width:651px)">
+                <img src="IMG/" alt="">
+            </picture>
+        </div>
+        <div class="mySlides fade">
+            <picture>
+                <source srcset="IMG/" media="(max-width:650px)">
+                <source srcset="IMG/" media="(min-width:651px)">
+                <img src="IMG/" alt="">
+            </picture>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <script src="JS/footer.js"></script>
+    <script>
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+
+</html>

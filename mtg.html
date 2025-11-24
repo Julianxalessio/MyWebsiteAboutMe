@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        textarea {
+            height: fit-content;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: none;
+            font-family: Comic Sans MS;
+            overflow: hidden;
+        }
+
+        #MTG-info {
+            width: 99%;
+            height: fit-content;
+            margin: 10px;
+            padding: 10px;
+            font-size: 1.4em;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .card-picture {
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .card-info{
+            font-size: 1.3em;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navBar"></div>
+
+    <div class="placeholder"></div>
+    <div>
+        <textarea name="MTG-info" id="MTG-info" readonly>Ich war schon immer ein großer Sammler - von vielem, aber besonders von Sammelkarten. Schon als Kind habe ich Pokemon- und Yu-Gi-Oh !- Karten gesammelt. Wie viel Geld ich damals dafür ausgegeben habe, lasst sich kaum in Zahlen fassen. Heute sammle ich mit großer Leidenschaft Magic: The Gathering-Karten. Mittlerweile konnte ich mir eine beachtliche Sammlung aufbauen, mit der ich sogar einen Teil meiner fruheren Ausgaben theoretisch wieder wettgemacht habe. 
+Außerdem betreibe ich einen YouTube-Kanal, auf dem ein Unboxing-Video einer Collector-Box im Wert von 50.- zu finden ist (Link in der Fusszeile). Hier ware auch noch der Link zu meiner kompletten Sammlung https://archidekt.com/collection/v2/409082. Folgend kommen noch zusatzlich eine Übersicht meiner Top 10-Karten.</textarea>
+        <div class="cards">
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+            <div class="card">
+                <img src="" alt="Card-Picture" class="card-picture">
+                <textarea name="card-info" class="card-info" readonly></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer"></div>
+    <script src="JS/navbar.js"></script>
+    <script src="JS/footer.js"></script>
+    <script>
+        (function () {
+            const feld = document.querySelector('textarea');
+            if (!feld) {
+                return;
+            }
+
+            function resizeTextarea() {
+                feld.style.height = 'auto';
+                feld.style.height = feld.scrollHeight + 'px';
+            }
+
+            function debounce(fn, wait) {
+                let t;
+                return function (...args) {
+                    clearTimeout(t);
+                    t = setTimeout(() => fn.apply(this, args), wait);
+                }
+            }
+
+            window.addEventListener('load', resizeTextarea);
+            window.addEventListener('resize', debounce(resizeTextarea, 150));
+        })();
+    </script>
+</body>
+
+</html>

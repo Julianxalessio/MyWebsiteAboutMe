@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEHRSTELLE</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        textarea {
+            overflow: hidden;
+            border-radius: 10px;
+            resize: none;
+            width: calc(99% - 25px);
+            height: fit-content;
+            font-size: 1.5em;
+            margin-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+        }
+        .content img{
+            width: 25%;
+            margin: 20px;
+            border: solid black 1px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navBar"></div>
+    <script src="JS/navbar.js"></script>
+    <div class="placeholder"></div>
+    <div class="content">
+    <img src="IMG/Baloise_Logo.png" style="border: none;" alt="Baloise_Logo">
+    <textarea name="text" readonly>Ich habe diese Jahr meine Lehre bei der Baloise als Informatiker (Plattformentwickler) gestartet. Diese Lehre dauert 4 Jahre. Zurzeit bin ich aber noch bis im Fruhling 2026 in der Aprentas in der Grundausbildung. Gleichzeitig besuche ich noch die Berufsschule in Pratteln und die BM in Muttenz.</textarea>
+    <img src="IMG/Baloise_Park.jpg" alt="Baloise_Hauptsitz" style="width: 50%;">
+    </div>
+    <div class="footer"></div>
+    <script src="JS/footer.js"></script>
+    <script>
+        (function(){
+            const feld = document.querySelector('textarea');
+            if(!feld) {
+                return;
+            }
+
+            function resizeTextarea(){
+                feld.style.height = 'auto';
+                feld.style.height = feld.scrollHeight + 'px';
+            }
+
+            function debounce(fn, wait){
+                let t;
+                return function(...args){
+                    clearTimeout(t);
+                    t = setTimeout(()=> fn.apply(this, args), wait);
+                }
+            }
+
+            window.addEventListener('load', resizeTextarea);
+            window.addEventListener('resize', debounce(resizeTextarea, 150));
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONTAKT</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        label {
+            display: block;
+            margin: 10px 10px 0px 10px;
+            font-size: 1.4em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input,
+        textarea {
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: fit-content;
+            font-size: 1.2em;
+            width: 99%;
+        }
+
+        form {
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-left: 10px;
+            text-decoration: underline;
+        }
+
+        textarea {
+            min-height: 300px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navBar"></div>
+    <div class="placeholder"></div>
+    <script>
+        function sendMessage(event) {
+            alert(`Vielen Dank für ihre Nachricht! Wir werden uns so schnell wie möglich bei Ihnen melden`);
+        }
+    </script>
+    <h1>Kontakt</h1>
+    <form onsubmit="JavaScript:sendMessage()">
+        <label for="vorname">Vorname: </label>
+        <input type="text" name="vorname" id="vorname" required placeholder="z.B. Julian"
+            pattern="^[A-Z][a-zA-Z]*[\- ]?[A-Z]?[a-zA-Z]*$">
+        <label for="nachname">Nachname: </label>
+        <input type="text" name="nachname" id="nachname" required placeholder="z.B. Lombardo"
+            pattern="^[A-Z][a-zA-Z]*[\- ]?[A-Z]?[a-zA-Z]*$">
+        <label for="email">E-Mail: </label>
+        <input type="text" name="email" id="email" required placeholder="z.B. julianxalessio@gmail.com"
+            pattern="^[a-zA-Z1-9\.\-\_]+[@]([a-zA-Z1-9\-]*[\.]){0,2}([a-zA-Z]{2,6})$">
+        <label for="nachricht">Nachricht: </label>
+        <textarea name="nachricht" id="nachricht" required placeholder="Ihre Nachricht..."></textarea>
+        <input type="submit" value="Absenden">
+    </form>
+    <div class="footer"></div>
+    <script src="JS/navbar.js"></script>
+    <script src="JS/footer.js"></script>
+</body>
+
+</html>

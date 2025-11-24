@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHIRI</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        textarea {
+            overflow: hidden;
+            border-radius: 10px;
+            resize: none;
+            width: 100%;
+            height: fit-content;
+            font-size: 1.5em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+        }
+        img{
+            max-width: 22%;
+        }
+        #bvn{
+            width: 50vw;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 650px) {
+            .content{
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+            .content div{
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                width: 95%;
+            }
+            textarea {
+                text-align: center;
+            }
+            img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navBar"></div>
+    <script src="JS/navbar.js"></script>
+    <div class="placeholder"></div>
+    <div class="content">
+        <img src="IMG/Julian_Schiri.jpg" alt="Schiri_Foto">
+        <div>
+            <textarea name="text" readonly>Ich bin nun seit 2 Jahren offizieller Basketball-Minischiri für Liestal. Dieses Jahr habe ich noch dazu den Basketball-Schiri für den ganzen BVN (Basketball Verein Nordwestschweiz) gemacht. Dadurch habe ich nun Spiele in allen Altersgruppen, hingegen ich früher nur U10 und U12 low gepfiffen habe.</textarea>
+            <img src="IMG/BVN_Logo.png" alt="BVN_Foto" id="bvn">
+        </div>
+    </div>
+
+    <div class="footer"></div>
+    <script src="JS/footer.js"></script>
+    <script>
+        (function(){
+            const feld = document.querySelector('textarea');
+            if(!feld) {
+                return;
+            }
+
+            function resizeTextarea(){
+                feld.style.height = 'auto';
+                feld.style.height = feld.scrollHeight + 'px';
+            }
+
+            function debounce(fn, wait){
+                let t;
+                return function(...args){
+                    clearTimeout(t);
+                    t = setTimeout(()=> fn.apply(this, args), wait);
+                }
+            }
+
+            window.addEventListener('load', resizeTextarea);
+            window.addEventListener('resize', debounce(resizeTextarea, 150));
+        })();
+    </script>
+</body>
+
+</html>
