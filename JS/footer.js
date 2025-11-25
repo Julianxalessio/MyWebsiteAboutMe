@@ -24,6 +24,7 @@ async function getFooterPhone() {
         ${data}
     `;
 }
+
 function getModeForWidthFoot(w) {
     if (w >= 1001) return 'desktop';
     if (w >= 651) return 'ipad';
@@ -50,6 +51,6 @@ window.addEventListener('load', () => {
     loadAppropriateFoot();
 });
 
-window.addEventListener('resize', e => {
+window.addEventListener('resize', () => {
     loadAppropriateFoot();
 });
