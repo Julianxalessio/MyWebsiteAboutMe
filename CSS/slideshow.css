@@ -1,16 +1,18 @@
 /* Slideshow container */
 .slideshow-container {
-    width: 99%;
+    width: calc(98% - 10px);
     margin: auto;
     background-color: black;
-    height: calc(100% - 44px - 90px);
+    height: calc(94% - 44px - 90px);
+    display: flex;
     align-content: center;
     justify-content: center;
-    display: flex;
     padding: 20px;
 }
+body {
+    background-color: black;
+}
 
-/* Hide the images by default */
 .mySlides {
     display: none;
 }
@@ -18,10 +20,10 @@
 .mySlides img {
     max-width: 100%;
     height: auto;
-    max-height: calc(100vh - 134px);
+    width: auto;
+    max-height: 100%;
 }
 
-/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 2.5s;

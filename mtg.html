@@ -8,7 +8,25 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        textarea {
+        .slideshow-container {
+            align-content: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .mySlides {
+            display: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        .mySlides img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <style>
+        .text {
             height: fit-content;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -16,6 +34,7 @@
             resize: none;
             font-family: Comic Sans MS;
             overflow: hidden;
+            padding: 10px;
         }
 
         #MTG-info {
@@ -31,15 +50,30 @@
             flex-direction: column;
             align-items: center;
             margin: 10px;
+            border: solid #ccc 1px;
+            padding: 5px;
+            border-radius: 10px;
+            flex: 0 1 240px;
+            box-sizing: border-box;
+            max-width: 320px;
         }
 
         .card-picture {
-            width: 200px;
+            width: 100%;
             height: auto;
             margin-bottom: 10px;
+            object-fit: contain;
+            max-height: 300px;
+
         }
-        .card-info{
-            font-size: 1.3em;
+
+        .card-info {
+            font-size: 1.15em;
+        }
+
+        .info-text {
+            margin-top: 5px;
+            font-size: 0.9em !important;
         }
 
         .cards {
@@ -48,9 +82,8 @@
             justify-content: center;
         }
 
-        .footer {
-            position: absolute;
-            bottom: 0;
+        .bold {
+            font-weight: 650;
         }
     </style>
 </head>
@@ -60,80 +93,257 @@
 
     <div class="placeholder"></div>
     <div>
-        <textarea name="MTG-info" id="MTG-info" readonly>Ich war schon immer ein großer Sammler - von vielem, aber besonders von Sammelkarten. Schon als Kind habe ich Pokemon- und Yu-Gi-Oh !- Karten gesammelt. Wie viel Geld ich damals dafür ausgegeben habe, lasst sich kaum in Zahlen fassen. Heute sammle ich mit großer Leidenschaft Magic: The Gathering-Karten. Mittlerweile konnte ich mir eine beachtliche Sammlung aufbauen, mit der ich sogar einen Teil meiner fruheren Ausgaben theoretisch wieder wettgemacht habe. 
-Außerdem betreibe ich einen YouTube-Kanal, auf dem ein Unboxing-Video einer Collector-Box im Wert von 50.- zu finden ist (Link in der Fusszeile). Hier ware auch noch der Link zu meiner kompletten Sammlung https://archidekt.com/collection/v2/409082. Folgend kommen noch zusatzlich eine Übersicht meiner Top 10-Karten.</textarea>
+        <div name="MTG-info" id="MTG-info" class="text" readonly>Ich war schon immer ein großer Sammler - von vielem,
+            aber besonders von Sammelkarten. Schon als Kind habe ich Pokemon- und Yu-Gi-Oh !- Karten gesammelt. Wie viel
+            Geld ich damals dafür ausgegeben habe, lasst sich kaum in Zahlen fassen. Heute sammle ich mit großer
+            Leidenschaft Magic: The Gathering-Karten. Mittlerweile konnte ich mir eine beachtliche Sammlung aufbauen,
+            mit der ich sogar einen Teil meiner fruheren Ausgaben theoretisch wieder wettgemacht habe. <br>Außerdem
+            betreibe ich einen YouTube-Kanal, auf dem ein Unboxing-Video einer Collector-Box im Wert von 50.- zu finden
+            ist (Link in der Fusszeile). <a href="https://archidekt.com/collection/v2/409082" target="_blank">Hier ware
+                auch noch der Link zu meiner
+                kompletten Sammlung</a>. Folgend kommen noch zusatzlich eine
+            Übersicht meiner Top 11-Karten.</div>
         <div class="cards">
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/eoe-15-exalted-sunborn.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Exalted Sunborn</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Edge of Eterneties (EOE)</div><br class="small">
+                        Releasedate: <div class="bold">01.08.2025</div><br class="small">
+                        Rarity: <div class="bold">Mythic Rare</div><br class="small">
+                        Price: <div class="bold">$11.51</div><br class="small">
+                        Language: <div class="bold">German/Deutsch</div>
+                        <br><br>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/eoe-236-chrome-companion.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Chrome Companion</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Edge of Eterneties (EOE)</div><br class="small">
+                        Releasedate: <div class="bold">01.08.2025</div><br class="small">
+                        Rarity: <div class="bold">Common</div><br class="small">
+                        Price: <div class="bold">$0.04</div><br class="small">
+                        Language: <div class="bold">German/Deutsch</div>
+                        <br><br>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/eoe-247-thrumming-hivepool.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Thrumming Hivepool</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Edge of Eterneties (EOE)</div><br class="small">
+                        Releasedate: <div class="bold">01.08.2025</div><br class="small">
+                        Rarity: <div class="bold">Rare</div><br class="small">
+                        Price: <div class="bold">$1.25</div><br class="small">
+                        Language: <div class="bold">English/Englisch</div>
+                        <br><br>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/eoe-253-evendo-waking-haven.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Evendo, Waking Haven</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Edge of Eterneties (EOE)</div><br class="small">
+                        Releasedate: <div class="bold">01.08.2025</div><br class="small">
+                        Rarity: <div class="bold">Mythic Rare</div><br class="small">
+                        Price: <div class="bold">$18.99</div><br class="small">
+                        Language: <div class="bold">German/Deutsch</div>
+                        <br><br>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/eoe-307-archenemy-s-charm.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Archenemy's Charm</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Edge of Eterneties (EOE)</div><br class="small">
+                        Releasedate: <div class="bold">01.08.2025</div><br class="small">
+                        Rarity: <div class="bold">Rare</div><br class="small">
+                        Price: <div class="bold">$2.99</div><br class="small">
+                        Language: <div class="bold">German/Deutsch</div>
+                        <br><br>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/eos-31-nesting-grounds.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Archenemy's Charm</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Edge of Eterneties: Stellar Sights (EOS)</div><br class="small">
+                        Releasedate: <div class="bold">01.08.2025</div><br class="small">
+                        Rarity: <div class="bold">Rare</div><br class="small">
+                        Price: <div class="bold">$0.65</div><br class="small">
+                        Language: <div class="bold">German/Deutsch</div> 
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/ltr-414-pippin-s-bravery.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Pippin's Bravery</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">The Lord of the Rings (LTR)</div><br
+                            class="small">
+                        Releasedate: <div class="bold">23.06.2023</div><br class="small">
+                        Rarity: <div class="bold">Common</div><br class="small">
+                        Price: <div class="bold">$0.11</div><br class="small">
+                        Language: <div class="bold">English/Englisch</div>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/mkm-332-undercity-sewers.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Undercity Sewers</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Murders at Karlov Manor (MKM)</div><br class="small">
+                        Releasedate: <div class="bold">09.02.2024</div><br class="small">
+                        Rarity: <div class="bold">Rare</div><br class="small">
+                        Price: <div class="bold">$26.05</div><br class="small">
+                        Language: <div class="bold">English/Englisch</div>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <img src="IMG/MTG-Cards/rex-14-indominus-rex-alpha.jpg" alt="Card-Picture" class="card-picture">
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Indominus Rex, Alpha</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Jurassic World Collection (REX)</div><br class="small">
+                        Releasedate: <div class="bold">17.11.2023</div><br class="small">
+                        Rarity: <div class="bold">Rare</div><br class="small">
+                        Price: <div class="bold">$9.42</div><br class="small">
+                        Language: <div class="bold">English/Englisch</div>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="" alt="Card-Picture" class="card-picture">
-                <textarea name="card-info" class="card-info" readonly></textarea>
+                <div class="slideshow-container">
+                    <div class="mySlides fade first">
+                        <img src="IMG/MTG-Cards/eoe-265-mountain.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade first">
+                        <img src="IMG/MTG-Cards/eoe-367-plains.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade first">
+                        <img src="IMG/MTG-Cards/eoe-368-island.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade first">
+                        <img src="IMG/MTG-Cards/eoe-369-swamp.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade first">
+                        <img src="IMG/MTG-Cards/eoe-371-forest.jpg" alt="card1" class="card-picture">
+                    </div>
+
+                </div>
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>Fullart Foil Basic Lands</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Edge of Eterneties (EOE)</div><br class="small">
+                        Releasedate: <div class="bold">01.08.2025</div><br class="small">
+                        Rarity: <div class="bold">Basic Land/Common</div><br class="small">
+                        Price: <div class="bold">$2.99 - $4.07</div><br class="small">
+                        Language: <div class="bold">German/Deutsch</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="slideshow-container">
+                    <div class="mySlides fade second">
+                        <img src="IMG/MTG-Cards/mkm-306-demand-answers.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade second">
+                        <img src="IMG/MTG-Cards/mkm-290-makeshift-binding.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade second">
+                        <img src="IMG/MTG-Cards/mkm-297-reenact-the-crime.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade second">
+                        <img src="IMG/MTG-Cards/mkm-300-murder.jpg" alt="card1" class="card-picture">
+                    </div>
+                    <div class="mySlides fade second">
+                        <img src="IMG/MTG-Cards/mkm-310-fanatical-strength.jpg" alt="card1" class="card-picture">
+                    </div>
+                </div>
+                <div name="card-info" class="card-info text" readonly>
+                    <b><u>MKM Story Spotlights</u></b>
+                    <div class="info-text">
+                        Set: <div class="bold">Murders at Karlov Manors (MKM)</div><br class="small">
+                        Releasedate: <div class="bold">09.02.2025</div><br class="small">
+                        Rarity: <div class="bold">Common & Rare</div><br class="small">
+                        Price: <div class="bold">$0.09 - $0.28</div><br class="small">
+                        Language: <div class="bold">German & English</div>
+                    </div>
+                </div>
             </div>
 
         </div>
-    </div>
 
-    <div class="footer"></div>
-    <script src="JS/navbar.js"></script>
-    <script src="JS/footer.js"></script>
-    <script>
-        (function () {
-            const feld = document.querySelector('textarea');
-            if (!feld) {
-                return;
-            }
+        <div class="footer"></div>
+        <script src="JS/navbar.js"></script>
+        <script src="JS/footer.js"></script>
+        <script>
+            let slideIndex = 0;
+            let slideIndexSecond = 0;
+            showSlides();
 
-            function resizeTextarea() {
-                feld.style.height = 'auto';
-                feld.style.height = feld.scrollHeight + 'px';
-            }
-
-            function debounce(fn, wait) {
-                let t;
-                return function (...args) {
-                    clearTimeout(t);
-                    t = setTimeout(() => fn.apply(this, args), wait);
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("first");
+                let slidesSecond = document.getElementsByClassName("second");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
                 }
+                for (i = 0; i < slidesSecond.length; i++) {
+                    slidesSecond[i].style.display = "none";
+                }
+                slideIndex++;
+                slideIndexSecond++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                if (slideIndexSecond > slidesSecond.length) {
+                    slideIndexSecond = 1;
+                }
+                slides[slideIndex - 1].style.display = "block";
+                slidesSecond[slideIndexSecond - 1].style.display = "block";
+                setTimeout(showSlides, 3000);
             }
+        </script>
+        <script>
+            (function () {
+                const feld = document.querySelector('textarea');
+                if (!feld) {
+                    return;
+                }
 
-            window.addEventListener('load', resizeTextarea);
-            window.addEventListener('resize', debounce(resizeTextarea, 150));
-        })();
-    </script>
+                function resizeTextarea() {
+                    feld.style.height = 'auto';
+                    feld.style.height = feld.scrollHeight + 'px';
+                }
+
+                function debounce(fn, wait) {
+                    let t;
+                    return function (...args) {
+                        clearTimeout(t);
+                        t = setTimeout(() => fn.apply(this, args), wait);
+                    }
+                }
+
+                window.addEventListener('load', resizeTextarea);
+                window.addEventListener('resize', debounce(resizeTextarea, 150));
+            })();
+        </script>
 </body>
 
 </html>
