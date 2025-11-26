@@ -21,14 +21,15 @@
             height: 80px;
         }
 
-        textarea {
+        p {
             overflow: hidden;
             border-radius: 0 0 10px 10px;
+            border: solid black 1px;
             resize: none;
             font-size: 1.3em;
-            width: calc(99% - 15px);
+            width: calc(100% - 20px);
             font-family: Arial, Helvetica, sans-serif;
-            padding: 15px;
+            padding: 15px 0px 0px 15px;
             margin: 0;
         }
 
@@ -39,8 +40,8 @@
             border-radius: 10px 10px 0px 0px;
             width: calc(100% - 20px);
             background-color: white;
-            padding: 10px;
-            margin: 0 0 -15px 0;
+            padding: 10px 0px 10px 15px;
+            margin: 0 0 0 0;
         }
 
         .first {
@@ -85,6 +86,7 @@
         }
 
         @media screen and (max-width: 650px) {
+
             .first,
             .second {
                 flex-direction: column;
@@ -114,49 +116,50 @@
             <img src="IMG/Passfoto_JulianLombardo.jpeg" alt="Foto_Julian" width="100">
             <div>
                 <a>Persönliche Daten</a>
-                <textarea name="Persönlich" id="persönlich" readonly>Name: Julian Alessio Lombardo
+                <p id="persönlich" readonly>Name: Julian Alessio Lombardo <br>
 
-Adresse: Dinggrabenstrasse 1, 4304 Giebenach
+                    Adresse: Dinggrabenstrasse 1, 4304 Giebenach <br>
 
-Mobil: 076 749 67 88
+                    Mobil: 076 749 67 88 <br>
 
-E-Mail: julianxalessio@gmail.com
+                    E-Mail: julianxalessio@gmail.com <br>
 
-Geburtsdatum: 03.06.2009, Basel
+                    Geburtsdatum: 03.06.2009, Basel <br>
 
-Nationalitäten: Schweiz & Italien</textarea>
+                    Nationalitäten: Schweiz & Italien</p>
             </div>
         </div>
         <div class="second">
             <div>
-                <a>Schulbildung</a><br>
-                <textarea name="Schulbildung" id="Schulbildung" readonly>2022-2025 1 .- 3. Sekundarschule Niveau P, Pratteln
+                <a>Schulbildung</a>
+                <p id="Schulbildung">2022-2025 1 .- 3. Sekundarschule Niveau P, Pratteln <br>
+                    2016-2022 1 .- 6. Primarschule, Giebenach</p>
+                <br class="small">
+                <a style="margin-top: 10px;">Sprachkentnisse</a>
+                <p id="Sprachkentnisse">Deutsch | Muttersprache <br>
 
-2016-2022 1 .- 6. Primarschule, Giebenach</textarea><br>
-                <a style="margin-top: 10px;">Sprachkentnisse</a><br>
-                <textarea name="Sprachkentnisse" id="Sprachkentnisse" readonly>Deutsch | Muttersprache
+                    Französisch | Gute mündliche und schriftliche Kenntnisse
+                    (7. Jahre) <br>
 
-Französisch | Gute mündliche und schriftliche Kenntnisse
-(7. Jahre)
+                    Italienisch | Gute mündliche Kenntnisse
+                    (2. Jahre) <br>
 
-Italienisch | Gute mündliche Kenntnisse
-(2. Jahre)
-
-Englisch | Sehr gute mündliche und schriftliche Kenntnisse
-(5. Jahre)</textarea>
+                    Englisch | Sehr gute mündliche und schriftliche Kenntnisse
+                    (5. Jahre)</p>
             </div>
             <img src="IMG/Julian_Baby.jpg" alt="Foto_Julian_Baby">
         </div>
         <div style="width: 100%; display: flex; flex-direction: column;">
-            <a>IT-Kentnisse</a><br>
-            <textarea name="IT" id="IT" readonly>Sehr gute Kenntnisse Office 365 (Word, Excel, Power Point, OneNote, Teams, etc.).
+            <a>IT-Kentnisse</a>
+            <p id="IT" >Sehr gute Kenntnisse Office 365 (Word, Excel, Power Point, OneNote, Teams,
+                etc.). <br>
 
-Sehr gute Kentnisse in HTML, CSS, JS, Python, Java.
+                Sehr gute Kentnisse in HTML, CSS, JS, Python, Java. <br>
 
-Gute Kenntnisse in C# und C++.
+                Gute Kenntnisse in C# und C++. <br>
 
-Weis wie man Workstations einrichtet, Server wartet, Dokumentationen schreibt, mit Java Clients und Server
-erstellen kann, Netzwerke aufbaut, etc.</textarea>
+                Weis wie man Workstations einrichtet, Server wartet, Dokumentationen schreibt, mit Java Clients und
+                Server erstellen kann, Netzwerke aufbaut, etc.</p>
         </div>
     </div>
     <div class="footer"></div>
@@ -165,9 +168,9 @@ erstellen kann, Netzwerke aufbaut, etc.</textarea>
     <script src="JS/footer.js"></script>
     <script>
         window.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll("textarea[readonly]").forEach(textarea => {
-                textarea.style.height = "auto";
-                textarea.style.height = textarea.scrollHeight + "px";
+            document.querySelectorAll("p[readonly]").forEach(p => {
+                p.style.height = "auto";
+                p.style.height = p.scrollHeight + "px";
             });
         });
     </script>
