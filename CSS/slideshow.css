@@ -2,7 +2,7 @@
     width: calc(98vw - 10px);
     margin: auto;
     background-color: black;
-    height: calc(94% - 44px - 90px);
+    height: calc(90% - 44px - 90px);
     display: flex;
     align-content: center;
     justify-content: center;
@@ -26,6 +26,11 @@ body {
 .fade {
     animation-name: fade;
     animation-duration: 2.5s;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
 }
 
 @keyframes fade {

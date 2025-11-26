@@ -66,7 +66,9 @@
             border: solid black 1px;
             border-radius: 10px;
             height: auto;
-            flex: 0.4;
+            max-height: 700px;
+            width: 40%;
+            max-width: 500px;
         }
 
         .second {
@@ -82,15 +84,7 @@
             align-content: center;
         }
 
-        .second img {
-            border: solid black 1px;
-            border-radius: 10px;
-            height: auto;
-            max-width: 25%;
-        }
-
         @media screen and (max-width: 650px) {
-
             .first,
             .second {
                 flex-direction: column;
@@ -117,7 +111,7 @@
     <div class="content">
         <div class="placeholder"></div>
         <div class="first">
-            <img src="IMG/Passfoto_JulianLombardo.jpg" alt="Foto_Julian" width="100">
+            <img src="IMG/Passfoto_JulianLombardo.jpeg" alt="Foto_Julian" width="100">
             <div>
                 <a>Persönliche Daten</a>
                 <textarea name="Persönlich" id="persönlich" readonly>Name: Julian Alessio Lombardo
