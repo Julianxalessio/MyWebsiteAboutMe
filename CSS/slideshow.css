@@ -1,5 +1,5 @@
 .slideshow-container {
-    width: calc(98% - 10px);
+    width: calc(98vw - 10px);
     margin: auto;
     background-color: black;
     height: calc(94% - 44px - 90px);
